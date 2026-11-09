@@ -1,0 +1,15 @@
+:root {
+  --color-primary: #2457A7;
+  --color-secondary: #397BC1;
+  --color-primary-soft: #EAF1FB;
+  --color-white: #FFFFFF;
+  --color-bg-secondary: #F8FAFC;
+  --color-text: #263445;
+  --color-text-secondary: #64748B;
+  --color-border: #E2E8F0;
+  --color-priority-critical: #DC2626;
+  --color-priority-high: #EA5808;
+  --color-priority-medium: #D97706;
+  --color-priority-low: #2563EB;
+  --color-resolved: #059669;
+}
