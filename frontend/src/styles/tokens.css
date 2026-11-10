@@ -12,4 +12,6 @@
   --color-priority-medium: #D97706;
   --color-priority-low: #2563EB;
   --color-resolved: #059669;
+
+  --font-family-base: 'Inter Variable', system-ui, sans-serif;
 }
