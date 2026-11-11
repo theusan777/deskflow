@@ -4,7 +4,7 @@
 
 - Decisão: Fixar a versão do TypeScript em ~6.0.3 para evitar problemas de compatibilidade com dependências que ainda não suportam versões mais recentes.
 
-- Motivo: Algumas bibliotecas e ferramentas do ecossistema ainda não são compatíveis com versões mais recentes do TypeScript, o que pode causar erros de compilação ou comportamento inesperado e o principal motivo foi que o typescript-eslint@8.72.1 declara suporte a TypeScript >=4.8.4 <6.1.0, e o gerador tinha instalado a 7.0.2, o que gerou o erro ERESOLVE.
+- Motivo: Algumas bibliotecas e ferramentas do ecossistema ainda não são compatíveis com versões mais recentes do TypeScript, o que pode causar erros de compilação ou comportamento inesperado. O principal motivo foi que o `typescript-eslint@8.72.1` declara suporte a TypeScript `>=4.8.4 <6.1.0`, enquanto o gerador instalou a versão 7.0.2, causando o erro `ERESOLVE`.
 
 - Alternativas consideradas: Atualizar para a versão mais recente do TypeScript, mas isso poderia introduzir problemas de compatibilidade com dependências existentes.
 
@@ -17,7 +17,7 @@
 
 - Motivo: O ESLint é amplamente utilizado na comunidade JavaScript/TypeScript, possui uma grande variedade de plugins e regras configuráveis, e é mais fácil de integrar com outras ferramentas de desenvolvimento.
 
-- Alternativas consideradas: Aceitar o Oxlint que o gerador oferece como padrão, mas isso poderia limitar a capacidade de personalização e integração com outras ferramentas.
+- Alternativas consideradas: Aceitar o Oxlint que o gerador oferece como padrão, mas seu ecossistema de regras e plugins é menor e há menos material de estudo disponível.
 
 - Data: 04/11/2026.
 
@@ -26,7 +26,7 @@
 
 - Decisão: Evitar o uso do comando `npm audit fix --force` para corrigir vulnerabilidades de segurança.
 
-- Motivo: O uso do `--force` pode atualizar dependências de forma agressiva, o que pode quebrar a compatibilidade com o código existente e introduzir novos bugs e tive problemas como as 10 vulnerabilidades moderadas vinham só de ferramentas de desenvolvimento (cadeia do minimatch dentro do ESLint), npm audit --omit=dev retornou 0, e o --force rebaixaria o ESLint 10 para o 9.
+- Motivo: O uso do `--force` pode atualizar dependências de forma agressiva, quebrar a compatibilidade com o código existente e introduzir novos bugs. As 10 vulnerabilidades moderadas vinham apenas de ferramentas de desenvolvimento (cadeia do `minimatch` dentro do ESLint), e `npm audit --omit=dev` retornou 0. Além disso, o `--force` rebaixaria o ESLint 10 para o 9, uma mudança incompatível.
 
 - Alternativas consideradas: Rodar apenas `npm audit fix` sem o `--force`, ou revisar manualmente as vulnerabilidades e atualizar as dependências de forma controlada.
 
@@ -37,9 +37,9 @@
 
 - Decisão: Utilizar a fonte Inter através do pacote `@fontsource-variable/inter` para garantir uma tipografia consistente e de alta qualidade no projeto.
 
-- Motivo: A fonte Inter é amplamente reconhecida por sua legibilidade e estética moderna, e o pacote `@fontsource-variable/inter` permite fácil integração com projetos web, oferecendo suporte a variações de peso e estilo.
+- Motivo: Como o DeskFlow é um sistema interno, carregar a fonte de um serviço externo como o Google Fonts criaria uma dependência de rede desnecessária. Com o pacote `@fontsource-variable/inter`, a fonte vai junto com o build.
 
-- Alternativas consideradas: Utilizar outras fontes, mas a Inter foi escolhida por sua popularidade e legibilidade.
+- Alternativas consideradas: Usar um link do Google Fonts no `index.html`, descartado pelo acoplamento externo.
 
 - Data: 10/11/2026.
 
@@ -59,7 +59,7 @@
 
 - Decisão: Utilizar o Express como framework HTTP para o backend do projeto.
 
-- Motivo: O Express é um framework minimalista e flexível para Node.js, amplamente utilizado na comunidade, com uma grande quantidade de recursos e middleware disponíveis, facilitando o desenvolvimento de APIs RESTful e o mais importante vagas de júnior e estágio pedem express.
+- Motivo: Vagas de júnior e estágio costumam pedir Express. Além disso, é um framework minimalista e flexível para Node.js, amplamente utilizado na comunidade, com muitos recursos e middlewares disponíveis, facilitando o desenvolvimento de APIs RESTful.
 
 - Alternativas consideradas: Utilizar outros frameworks como o Fastify, mas o Express foi escolhido por sua popularidade, documentação e comunidade ativa.
 
