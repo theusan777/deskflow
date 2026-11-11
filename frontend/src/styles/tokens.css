@@ -1,4 +1,36 @@
 :root {
+    /* Tipografia */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+
+  /* Espacamento */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius */
+
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-height: 44px
+
+  /* Cores */
+
   --color-primary: #2457A7;
   --color-secondary: #397BC1;
   --color-primary-soft: #EAF1FB;
